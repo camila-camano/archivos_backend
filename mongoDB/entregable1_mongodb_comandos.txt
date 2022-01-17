@@ -1,0 +1,29 @@
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+mibase  0.000GB
+
+> db
+prueba
+
+> use mibase
+switched to db mibase
+
+> db
+mibase
+
+> db.productos.insert({nombre:"Fideos", categoria:"harina", stock: 20})
+WriteResult({ "nInserted" : 1 })
+
+> db.productos.insert({nombre:"Leche", categoria:"lacteos", stock: 30})
+WriteResult({ "nInserted" : 1 })
+> db.productos.insert({nombre:"Crema", categoria:"lacteos", stock: 15})
+WriteResult({ "nInserted" : 1 })
+
+> db.productos.find()
+{ "_id" : ObjectId("61e58c7b157240fea7e6d3dd"), "nombre" : "Fideos", "categoria" : "harina", "stock" : 20 }
+{ "_id" : ObjectId("61e58cbd157240fea7e6d3de"), "nombre" : "Leche", "categoria" : "lacteos", "stock" : 30 }
+{ "_id" : ObjectId("61e58cc8157240fea7e6d3df"), "nombre" : "Crema", "categoria" : "lacteos", "stock" : 15 }
+> 
+
